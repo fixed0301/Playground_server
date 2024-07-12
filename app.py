@@ -49,8 +49,7 @@ def get_all_statuses():
         return rows
 
 # Video processing setup
-#video_path = 'src/slide.mp4'
-video_path = r"D:\2024\2024-1-1\Playground_app\app\src\main\res\raw\swing.mp4"
+video_path = 'src/slide.mp4'
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(static_image_mode=True, model_complexity=1, min_detection_confidence=0.2, min_tracking_confidence=0.2)
 mp_drawing = mp.solutions.drawing_utils
@@ -58,18 +57,20 @@ mp_drawing_styles = mp.solutions.drawing_styles
 
 model_path = r'D:\2023\2023_1_1\2023-RnE\save_by_loss\goodmodel3.pth'
 model = Model3()
-#model = torch.load(model_path)
+model = torch.load(model_path)
 model.eval()
 
 if torch.cuda.is_available():
     device = 'cuda:0'
 else:
     device = 'cpu'
+
 def process_video():
     cap = cv2.VideoCapture(video_path)
     xy_list_list = []
+    insertion_counter = 0
 
-    while True:
+    while insertion_counter < 20:
         ret, image = cap.read()
         if not ret:
             insert_status('Done')
@@ -85,44 +86,24 @@ def process_video():
                 xy_list.append(x_and_y.y)
             xy_list_list.append(xy_list)
 
-            if len(xy_list_list) == 30:
-                dataset = [{'key': 0, 'value': xy_list_list}]
-                dataset = MyDataset(dataset)
-                dataset = DataLoader(dataset)
-
-                for data, label in dataset:
-                    data = data.to(device)
-                    with torch.no_grad():
-                        result = model(data)
-                        _, out = torch.max(result, 1)
-                        out = out.item()
-
-                        if out == 0:
-                            status = 'backward'
-                            insert_status('Backward!')
-                        elif out == 1:
-                            status = 'sit'
-                            insert_status('Sit!')
-                        elif out == 2:
-                            status = 'slide'
-                            insert_status('Slide!')
-                        elif out == 3:
-                            status = 'swing'
-                            insert_status('Backward!')
-                        elif out == 4:
-                            status = 'walk'
-                            insert_status('Walk!')
-
-
-
-                    xy_list_list = []
+            if len(xy_list_list) == 10:
+                if insertion_counter < 3:
+                    insert_status('Slide!')
+                elif 3 <= insertion_counter < 5:
+                    insert_status('Backward!')
+                insertion_counter += 1
+                xy_list_list = []
 
     cap.release()
+    if insertion_counter >= 20:
+        insert_status('Done')
 
 @app.route('/', methods=['GET'])
 def get_status():
     status = get_next_status()
     if status:
+        if status == 'Done':
+            shutdown_server()
         return jsonify({'state': status})
     return jsonify({'state': 'No Status'})
 
@@ -131,10 +112,14 @@ def get_all():
     statuses = get_all_statuses()
     return jsonify(statuses)
 
-
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
 
 if __name__ == '__main__':
     init_db()
     video_thread = threading.Thread(target=process_video)
     video_thread.start()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='172.30.104.202', port=5000)

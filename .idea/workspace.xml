@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d285bf8-e135-4928-89f9-ff608eb08a25" name="Changes" comment="" />
+    <list default="true" id="4d285bf8-e135-4928-89f9-ff608eb08a25" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/findroi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/slide_vid.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/asdf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/status.db" beforeDir="false" afterPath="$PROJECT_DIR$/status.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test vid.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/final_app_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test4test.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +46,13 @@
   &quot;keyToString&quot;: {
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
     &quot;Python.asdf.executor&quot;: &quot;Run&quot;,
+    &quot;Python.findroi.executor&quot;: &quot;Run&quot;,
     &quot;Python.send_msg.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.test4test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/2024/2024-1-1/창개연/Dynamic_Quantization&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/2024/2024-1-1/Playground-flask-server/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -75,28 +86,25 @@
       <workItem from="1714568614649" duration="6917000" />
       <workItem from="1715671721028" duration="14852000" />
       <workItem from="1716625491480" duration="2736000" />
+      <workItem from="1717031644714" duration="14600000" />
+      <workItem from="1717370760762" duration="1932000" />
+      <workItem from="1717390174154" duration="372000" />
+      <workItem from="1718064243900" duration="41000" />
+      <workItem from="1720511054714" duration="9098000" />
+      <workItem from="1720676292084" duration="1909000" />
+      <workItem from="1720744839807" duration="1217000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Playground_flask_server$test4test.coverage" NAME="test4test Coverage Results" MODIFIED="1716654233107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Playground_flask_server$app.coverage" NAME="app Coverage Results" MODIFIED="1716654530116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Playground_flask_server$app.coverage" NAME="app Coverage Results" MODIFIED="1720749857278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Playground_flask_server$send_msg.coverage" NAME="send_msg Coverage Results" MODIFIED="1714571856490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Playground_flask_server$test.coverage" NAME="test Coverage Results" MODIFIED="1716259812860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Playground_flask_server$asdf.coverage" NAME="asdf Coverage Results" MODIFIED="1716190792296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Playground_flask_server$findroi.coverage" NAME="findroi Coverage Results" MODIFIED="1720674380077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

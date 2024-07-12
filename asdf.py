@@ -85,9 +85,9 @@ def process_video():
             xy_list_list.append(xy_list)
 
             if len(xy_list_list) == 10:
-                insert_status('Backward!')
+                insert_status('Slide!')
             elif len(xy_list_list) == 20:
-                insert_status('Slide')
+                insert_status('Backward!')
                 xy_list_list = []
 
     cap.release()
